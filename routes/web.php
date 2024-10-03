@@ -3,6 +3,21 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+Route::view('/','welcome');
+Route::view('contacto','contact');
+Route::view(uri: 'blog', view: 'blog');
+Route::view('nosotros','about');
+
+/*
+Route::match(['put', 'patch'], '/', function() {
+    return 'This is a PUT/PATCH request';
+});
+*/
+
+/*Route::get('/', function () {
+    return view('welcome');
+});*/
+
 Route::get('/', function () {
     return view('welcome');
 });
