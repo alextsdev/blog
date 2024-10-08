@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 class PostController extends Controller
 {
-    public function __invoke()
+    public function index()
     {
         $posts = [
             ['title' => 'Post 1'],
