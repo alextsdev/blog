@@ -1,6 +1,6 @@
 <x-layout meta-title="Create a new Post" meta-description="Form to create a new Post">
     <h1>Create a new Post</h1>
-    <form method="post" action="{{ route('posts.store') }}">
+    <form method="POST" action="{{ route('posts.store') }}">
         @csrf
         <label>
             Title <br />
