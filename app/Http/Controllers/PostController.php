@@ -41,4 +41,9 @@ class PostController extends Controller
 
        return redirect()->route('posts.index');
     }
+
+    public function edit(Post $post)
+    {
+        return view('posts.edit', compact('post'));
+    }
 }
