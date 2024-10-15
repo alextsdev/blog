@@ -7,6 +7,11 @@
                 <a href="{{ route('posts.show', $post) }}">{{ $post->title }}</a>
             </h2><br>
             <a href="{{ route('posts.edit', $post) }}">Edit</a>
+            <form action="{{ route('posts.destroy', $post) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit">Delete</button>
+            </form>
         </div>
     @endforeach
 </x-layout>
