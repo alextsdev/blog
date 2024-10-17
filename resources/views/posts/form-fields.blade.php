@@ -1,17 +1,17 @@
 <label>
-    {{__('Title')}} <br />
+    {{ __('Title') }} <br />
     <input type="text" name="title" value="{{ old('title', $post->title) }}">
-    <br>
     @error('title')
+    <br />
     <small style="color: red">{{ $message }}</small>
     @enderror
 </label>
 <br />
 <label>
-    {{__('Body')}} <br />
+    {{ __('Body') }} <br />
     <textarea name="body">{{ old('body', $post->body) }}</textarea>
-    <br>
     @error('body')
+    <br />
     <small style="color: red">{{ $message }}</small>
     @enderror
 </label>
