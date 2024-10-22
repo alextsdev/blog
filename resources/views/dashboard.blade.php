@@ -1,4 +1,4 @@
-<x-app-layout meta-title="Dashboard" meta-description="Panel de Control">
+<x-app-layout meta-title="Panel de Control" meta-description="Panel de Control">
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Dashboard') }}
