@@ -17,7 +17,7 @@ class PostController extends Controller
 
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::where('published_at', '<=', now())->get();
 
         return view('posts.index', compact('posts'));
     }
@@ -25,6 +25,13 @@ class PostController extends Controller
     public function show(Post $post)
     {
         return view('posts.show', compact('post'));
+    }
+
+    public function myPosts()
+    {
+        $posts = auth()->user()->posts;
+
+        return view('posts.my-posts', compact('posts'));
     }
 
     public function create()

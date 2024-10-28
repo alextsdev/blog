@@ -85,6 +85,47 @@
                     ></path>
                 </svg>
             </a>
+
+
+            @auth
+            <div class="ml-8 hidden space-x-8 md:flex">
+                <a class="px-3 py-2 {{ request()->routeIs('home') ? 'text-sky-500' : 'text-slate-600 transition-colors hover:text-sky-500 dark:text-slate-400 dark:hover:text-sky-500' }}"
+                   href="/"
+                >
+                    Home
+                </a>
+                <a
+                    class="px-3 py-2 {{ request()->routeIs('posts.*') ? 'text-sky-500' : 'text-slate-600 transition-colors hover:text-sky-500 dark:text-slate-400 dark:hover:text-sky-500' }}"
+                    href="{{ route('posts.index') }}"
+                >
+                    Blog
+                </a>
+                <a
+                    class="px-3 py-2 {{ request()->routeIs('about') ? 'text-sky-500' : 'text-slate-600 transition-colors hover:text-sky-500 dark:text-slate-400 dark:hover:text-sky-500' }}"
+                    href="{{ route('about') }}"
+                >
+                    About
+                </a>
+                <a
+                    class="px-3 py-2 {{ request()->routeIs('contact') ? 'text-sky-500' : 'text-slate-600 transition-colors hover:text-sky-500 dark:text-slate-400 dark:hover:text-sky-500' }}"
+                    href="{{ route('contact') }}"
+                >
+                    Contact
+                </a>
+
+                <a
+                    class="px-3 py-2 {{ request()->routeIs('posts.*') ? 'text-sky-500' : 'text-slate-600 transition-colors hover:text-sky-500 dark:text-slate-400 dark:hover:text-sky-500' }}"
+                    href="{{ route('posts.myPosts') }}"
+                >
+                    {{ __('My Posts') }}
+                </a>
+            </div>
+            @endauth
+
+
+
+
+            @guest
             <div class="ml-8 hidden space-x-8 md:flex">
                 <a class="px-3 py-2 {{ request()->routeIs('home') ? 'text-sky-500' : 'text-slate-600 transition-colors hover:text-sky-500 dark:text-slate-400 dark:hover:text-sky-500' }}"
                    href="/"
@@ -110,7 +151,10 @@
                     Contact
                 </a>
             </div>
+            @endguest
         </div>
+
+
 
         <div class="flex">
             <div class="relative pt-1">
@@ -238,7 +282,7 @@
 
             <!-- boton -->
             @auth
-                <div class="hidden sm:flex sm:items-center sm:ms-6">
+                <div class="p-1 hidden sm:flex sm:items-center sm:ms-6">
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
                             <button
