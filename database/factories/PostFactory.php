@@ -22,7 +22,9 @@ class PostFactory extends Factory
 
             'title' => fake()->name(),
             'body' => fake()->paragraph(),
-            'published_at' => now(),
+            'published_at' => random_int(0, 2)
+            ? $this->faker->dateTimeBetween('-1 years', '+1 years')
+            : null,
         ];
     }
 }
