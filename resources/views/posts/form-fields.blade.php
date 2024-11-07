@@ -16,8 +16,8 @@
             id="body"
             name="body"
             type="text"
-            class="block w-full mt-1"
-            value="{{ old('body', $post->body) }}">
+            class="block w-full mt-1">
+            {{ old('body', $post->body) }}
         </x-textarea>
         <x-input-error :messages="$errors->get('body')" class="mt-2" />
     </div>

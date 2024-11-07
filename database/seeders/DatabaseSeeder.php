@@ -15,42 +15,29 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(3)->create();
-
         User::factory()->create([
-            'name' => 'alex',
+            'name' => 'Alex',
+            'last_name' => 'Maquina',
             'email' => 'alex@mail.es',
         ]);
 
         User::factory()->create([
-            'name' => 'pepe',
+            'name' => 'Pepe',
+            'last_name' => 'Martinez',
             'email' => 'pepe@mail.es',
         ]);
+
+        User::factory(3)->create();
 
         $users = User::all();
 
         // Crear categorías en la base de datos
         $categories = [
-            ['name' => 'deporte'],
-            ['name' => 'tecnología'],
-            ['name' => 'cine'],
-            ['name' => 'música'],
-            ['name' => 'viajes'],
-            ['name' => 'moda'],
-            ['name' => 'salud'],
-            ['name' => 'gastronomía'],
-            ['name' => 'literatura'],
-            ['name' => 'política'],
-            ['name' => 'historia'],
-            ['name' => 'ciencia'],
-            ['name' => 'arte'],
-            ['name' => 'economía'],
-            ['name' => 'educación'],
-            ['name' => 'religión'],
-            ['name' => 'medio ambiente'],
-            ['name' => 'fotografía'],
-            ['name' => 'humor'],
-            ['name' => 'videojuegos']
+            ['name' => 'Deporte'],
+            ['name' => 'Tecnología'],
+            ['name' => 'Cine'],
+            ['name' => 'Música'],
+            ['name' => 'Viajes'],
         ];
 
         foreach ($categories as $category) {
